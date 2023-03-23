@@ -5,33 +5,37 @@
     <title>JSP - Hello World</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-<h1>Olsker cupcakes</h1>
-<br/>
+    <body>
 
-${requestScope.besked}
-<br>
-<br>
+    <h1>Olsker cupcakes</h1>
+    <br/>
 
-<h2>Login Bruger</h2>
-<form action="hello-servlet" method="get">
-    <label for="navn">Angiv navn:</label><br>
-    <input type="text" id="navn" name="navn" value="John"><br>
-    <label for="kode">angiv kode:</label><br>
-    <input type="text" id="kode" name="kode" value="1234"><br><br>
-    <input type="submit" value="Submit">
-</form>
+    ${requestScope.besked}
+    <br>
+    <br>
+    <div class="container" style="align-content: center">
+        <h2>Login Bruger</h2>
+            <form action="hello-servlet" method="get">
+                <label for="navn">Angiv navn:</label><br>
+                <input type="text" id="navn" name="navn" value="John"><br>
+                <label for="kode">angiv kode:</label><br>
+                <input type="text" id="kode" name="kode" value="1234"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+    </div>
 
-<br>
 
-<h2>Opret Bruger</h2>
-<form action="hello-servlet" method="post">
-    <label for="nyNavn">Angiv navn:</label><br>
-    <input type="text" id="nyNavn" name="nytNavn" value="Enter name"><br>
-    <label for="nyKode">angiv ny kode:</label><br>
-    <input type="text" id="nyKode" name="nytKode" value="enter password"><br><br>
-    <input type="submit" value="opret bruger">
-</form>
+    <br>
 
-</body>
+        <div class="container" style="align-content: center">
+        <h2>Opret Bruger</h2>
+            <form action="hello-servlet" method="post">
+                <label for="nyNavn">Angiv navn:</label><br>
+                <input type="text" id="nyNavn" name="nyNavn" value="Enter name"><br>
+                <label for="nyKode">angiv ny kode:</label><br>
+                <input type="text" id="nyKode" name="nyKode" value="enter password"><br><br>
+                <input type="submit" value="opret bruger">
+            </form>
+        </div>
+    </body>
 </html>

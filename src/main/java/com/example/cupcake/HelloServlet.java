@@ -32,6 +32,10 @@ public class HelloServlet extends HttpServlet {
             String name = request.getParameter("navn");
             String password = request.getParameter("kode");
 
+            HttpSession session = request.getSession();
+
+            session.setAttribute("name", name);
+
             System.out.println("inden kald " + name + " " + password);
             String SQL = "SELECT * FROM Customer WHERE Name = ? AND Password = ?";
 
@@ -41,7 +45,6 @@ public class HelloServlet extends HttpServlet {
             Connection connection = AppStart.getConnectionPool().getConnection();
 
             PreparedStatement ps = connection.prepareStatement(SQL);)
-
             {
 
 
@@ -51,24 +54,28 @@ public class HelloServlet extends HttpServlet {
 
             ResultSet resultSet = ps.executeQuery();
 
-                System.out.println("rs " + resultSet);
+            System.out.println("rs " + resultSet);
 
-                resultSet.next();
+            //create user instance
+            //User user = new User(resultSet.getInt("idCustomer"),resultSet.getString("Name"),resultSet.getString("Password"));
+
+                //resultSet.next();
+
+                if (resultSet.next())
+                {
+                    System.out.println("successful login as " + resultSet.getString("name"));
+                    //return resultSet.getString("userName");
+                    request.getRequestDispatcher("WEB-INF/userPage.jsp").forward(request,response);
+                } else {
+                    System.out.println("User does not exist - Please try again");
+                    request.getRequestDispatcher("index.jsp").forward(request,response);
+                }
 
                 System.out.println(resultSet.getString("Name"));
                 System.out.println(resultSet.getString("Password"));
                 System.out.println("række nr " + resultSet.getInt("idCustomer"));
 
 
-                if (resultSet.next())
-            {
-                System.out.println("successful login as " + resultSet.getString("name"));
-                //return resultSet.getString("userName");
-                request.getRequestDispatcher("userPage.jsp").forward(request,response);
-            } else {
-                System.out.println("User does not exist - Please try again");
-                request.getRequestDispatcher("index.jsp").forward(request,response);
-            }
 
             }
         } catch (SQLException | ServletException e) {
@@ -78,6 +85,53 @@ public class HelloServlet extends HttpServlet {
         }
     }
 
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String newName = request.getParameter("nyNavn");
+        String newPassword = request.getParameter("nyKode");
+
+
+        // start
+        try
+        {
+            HttpSession session = request.getSession();
+
+            session.setAttribute("name", newName);
+
+            System.out.println("inden kald " + newName + " " + newPassword);
+            String SQL = "INSERT INTO Customer (Name, Password) VALUES('"+newName+"', '"+newPassword+"')";
+
+
+
+            try (
+                    Connection connection = AppStart.getConnectionPool().getConnection();
+
+                    PreparedStatement ps = connection.prepareStatement(SQL);)
+            {
+                //ResultSet rs = ps.getGeneratedKeys();
+
+                //ps.setString(1,null);
+                //ps.setString(1,newName);
+                //ps.setString(2,newPassword);
+                //ps.setInt(4,100);
+
+                int i = ps.executeUpdate();
+
+                if(i>0)
+                {
+                    request.getRequestDispatcher("WEB-INF/userPage.jsp").forward(request,response);
+                } else {
+                    request.getRequestDispatcher("index.jsp").forward(request,response);
+                }
+
+            }
+        } catch (SQLException | ServletException e) {
+            e.printStackTrace();
+            request.getRequestDispatcher("index.jsp").forward(request,response);
+
+        }
+
+        //end
+    }
     public void destroy() {
     }
 }
