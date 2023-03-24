@@ -25,9 +25,9 @@
 
     <select class="form-select" aria-label="Default select example">
         <option selected>Choose a topping </option>
-<c:forEach var="topping" items="${applicationScope.toppingList}">
+    <c:forEach var="topping" items="${applicationScope.toppingList}">
         <option value="${topping.id}">${topping.name}&nbsp - &nbsp${topping.price}&nbsp kr.</option>
-</c:forEach>
+    </c:forEach>
     </select>
 
 
