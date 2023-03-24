@@ -1,6 +1,7 @@
 package com.example.cupcake;
 
 import com.example.cupcake.Controller.AppStart;
+import com.example.cupcake.Entities.Cart;
 import com.example.cupcake.Entities.User;
 import com.example.cupcake.Mapper.ConnectionPool;
 
@@ -23,6 +24,8 @@ public class HelloServlet extends HttpServlet {
     String dbPsw = "cenyktwx";
 
     public void init() {
+
+
 
     }
 
@@ -58,6 +61,7 @@ public class HelloServlet extends HttpServlet {
 
             //create user instance
             //User user = new User(resultSet.getInt("idCustomer"),resultSet.getString("Name"),resultSet.getString("Password"));
+
 
                 //resultSet.next();
 
@@ -107,13 +111,6 @@ public class HelloServlet extends HttpServlet {
 
                     PreparedStatement ps = connection.prepareStatement(SQL);)
             {
-                //ResultSet rs = ps.getGeneratedKeys();
-
-                //ps.setString(1,null);
-                //ps.setString(1,newName);
-                //ps.setString(2,newPassword);
-                //ps.setInt(4,100);
-
                 int i = ps.executeUpdate();
 
                 if(i>0)
