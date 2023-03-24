@@ -10,25 +10,23 @@
     <h1>Make your own cupcake!</h1>
     <br>
 <h3 style="align-content: center">Choose a topping</h3>
-    <div class="dropdown" style="align-content: center">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-        </button>
 
-
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-
-                <li><a class="dropdown-item" href="#"></a></li>
-
-        </ul>
-    </div>
-
-    <select class="form-select" aria-label="Default select example">
+<form action="ServletCheckout" method="get">
+    <select class="form-select" aria-label="Default select example" id="selectTopping" name="selectTopping" >
         <option selected>Choose a topping </option>
-    <c:forEach var="topping" items="${applicationScope.toppingList}">
-        <option value="${topping.id}">${topping.name}&nbsp - &nbsp${topping.price}&nbsp kr.</option>
+    <c:forEach var="topping" items="${applicationScope.toppingList}" >
+        <option value="lort">${topping.name}&nbsp - &nbsp${topping.price}&nbsp kr. </option>
     </c:forEach>
     </select>
+</form>
+    <button type="button"></button>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
 
 
 

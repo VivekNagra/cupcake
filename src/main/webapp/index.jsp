@@ -17,9 +17,9 @@
         <h2>Login Bruger</h2>
             <form action="hello-servlet" method="get">
                 <label for="navn">Angiv navn:</label><br>
-                <input type="text" id="navn" name="navn" value="John"><br>
+                <input type="text" id="navn" name="navn" value="metin"><br>
                 <label for="kode">angiv kode:</label><br>
-                <input type="text" id="kode" name="kode" value="1234"><br><br>
+                <input type="text" id="kode" name="kode" value="123"><br><br>
                 <input type="submit" value="Submit">
             </form>
     </div>
