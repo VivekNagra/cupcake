@@ -1,20 +1,27 @@
 package com.example.cupcake.Entities;
 
 public class Order {
-    int idOrder;
-    int base;
-    int topping;
-    int price;
-    int cartID;
-    int quantity;
+    private int idOrder;
+    private String base;
+    private String topping;
+    private int price;
+    private int cartID;
+    private int quantity;
 
-    public Order(int idOrder, int base, int topping, int price, int cartID, int quantity) {
+    public Order(int idOrder, String base, String topping, int price, int cartID, int quantity) {
         this.idOrder = idOrder;
         this.base = base;
         this.topping = topping;
         this.price = price;
         this.cartID = cartID;
         this.quantity = quantity;
+    }
+
+    public Order(String topping, String base, int price)
+    {
+        this.topping = topping;
+        this.base = base;
+        this.price = price;
     }
 
     public int getIdOrder() {
@@ -25,19 +32,19 @@ public class Order {
         this.idOrder = idOrder;
     }
 
-    public int getBase() {
+    public String getBase() {
         return base;
     }
 
-    public void setBase(int base) {
+    public void setBase(String base) {
         this.base = base;
     }
 
-    public int getTopping() {
+    public String getTopping() {
         return topping;
     }
 
-    public void setTopping(int topping) {
+    public void setTopping(String topping) {
         this.topping = topping;
     }
 

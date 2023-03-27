@@ -39,6 +39,7 @@ public class HelloServlet extends HttpServlet {
 
             session.setAttribute("name", name);
 
+
             System.out.println("inden kald " + name + " " + password);
             String SQL = "SELECT * FROM Customer WHERE Name = ? AND Password = ?";
 

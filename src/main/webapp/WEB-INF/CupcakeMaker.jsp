@@ -8,25 +8,65 @@
 </head>
 <body>
     <h1>Make your own cupcake!</h1>
+
     <br>
-<h3 style="align-content: center">Choose a topping</h3>
+    <h3>choose a cupcake topping</h3>
+    <%--<form action="ServletCheckout" method="get">
+        <select name="selectTopping" class="form-select" aria-label="Default select example">
+            <option selected>Choose a topping </option>
+            <c:forEach var="topping" items="${applicationScope.toppingList}" >
+                <option value="${topping}">${topping.name}&nbsp - &nbsp${topping.price}&nbsp kr. </option>
+            </c:forEach>
+        </select>
+        <input type="submit" value="add topping">
+    </form>--%>
 
-<form action="ServletCheckout" method="get">
-    <select class="form-select" aria-label="Default select example" id="selectTopping" name="selectTopping" >
-        <option selected>Choose a topping </option>
-    <c:forEach var="topping" items="${applicationScope.toppingList}" >
-        <option value="lort">${topping.name}&nbsp - &nbsp${topping.price}&nbsp kr. </option>
-    </c:forEach>
-    </select>
-</form>
-    <button type="button"></button>
+    //prøver med begge
+    <form action="ServletCheckout" method="get">
+        <select name="selectTopping" class="form-select" aria-label="Default select example">
+            <option selected>Choose a topping </option>
+            <c:forEach var="topping" items="${applicationScope.toppingList}" >
+                <option value="${topping}">${topping.name}&nbsp - &nbsp${topping.price}&nbsp kr. </option>
+            </c:forEach>
+        </select>
 
-    <script>
-        function myFunction() {
-            var x = document.getElementById("mySelect").value;
-            document.getElementById("demo").innerHTML = x;
-        }
-    </script>
+        <select name="selectBase" class="form-select" aria-label="Default select example">
+            <option selected>Choose a base </option>
+            <c:forEach var="base" items="${applicationScope.baseList}" >
+                <option value="${base}">${base.name}&nbsp - &nbsp${base.price}&nbsp kr. </option>
+            </c:forEach>
+        </select>
+
+        <input type="submit" value="add to Cupcake">
+    </form>
+
+    <br>
+    //new try
+    <h3>Choose a cupcake base</h3>
+    <form action="ServletCheckout" method="get">
+        <select name="item">
+            <option value="1">Cream</option>
+            <option value="2">Choko</option>
+            <option value="3">Curry</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+    //try 2
+
+    <%--<h3>Choose a cupcake base</h3>
+    <form action="ServletCheckout" method="get">
+        <select class="form-select" aria-label="Default select example" id="selectBase" name="selectBase" >
+            <option selected>Choose a base </option>
+            <c:forEach var="base" items="${applicationScope.baseList}" >
+                <option value="${base}">${base.name}&nbsp - &nbsp${base.price}&nbsp kr. </option>
+            </c:forEach>
+        </select>
+    </form>--%>
+
+    <form action="ServletCheckout">
+        <input type="submit" value="Order Cupcake">
+    </form>
+
 
 
 

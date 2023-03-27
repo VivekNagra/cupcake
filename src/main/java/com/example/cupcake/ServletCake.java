@@ -96,13 +96,12 @@ public class ServletCake extends HttpServlet {
            sqlException.printStackTrace();
        }
 
-       System.out.println(toppingList);
+
 
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 
         request.getRequestDispatcher("WEB-INF/CupcakeMaker.jsp").forward(request, response);
 
