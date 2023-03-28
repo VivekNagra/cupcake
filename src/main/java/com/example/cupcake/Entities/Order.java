@@ -17,11 +17,13 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public Order(String topping, String base, int price)
+    public Order(String base, String topping, int price, int cartID, int quantity)
     {
-        this.topping = topping;
         this.base = base;
+        this.topping = topping;
         this.price = price;
+        this.cartID = cartID;
+        this.quantity = quantity;
     }
 
     public int getIdOrder() {

@@ -25,7 +25,8 @@ public class Toppings {
         return name;
     }
 
-    public int getPrice() {
+    public int getPrice()
+    {
         return price;
     }
 

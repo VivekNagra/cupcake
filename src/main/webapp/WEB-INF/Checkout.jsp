@@ -13,8 +13,22 @@
 <body>
 
 <h1> Her er din kurv ${sessionScope.name} </h1>
-<h3>${sessionScope.selectTopping}</h3>
-<h3>${sessionScope.selectBase}</h3>
+
+<h4>Base: ${sessionScope.baseName}  Price: ${sessionScope.basePrice} KR.</h4>
+
+<h4>Topping: ${sessionScope.toppingName}  Price: ${sessionScope.toppingPrice} KR.</h4>
+
+<h2> Your total is: ${sessionScope.total} KR.</h2>
+
+
+<form action="ServletPay" method="get">
+    <input type="submit" value="PAY">
+</form>
+
+
+
+
+
 
 
 

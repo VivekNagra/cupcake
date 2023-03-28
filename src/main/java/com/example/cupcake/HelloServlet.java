@@ -23,7 +23,10 @@ public class HelloServlet extends HttpServlet {
     String dbName = "matechsolutions_dk";
     String dbPsw = "cenyktwx";
 
-    public void init() {
+    public void init()
+
+    {
+
 
 
 
