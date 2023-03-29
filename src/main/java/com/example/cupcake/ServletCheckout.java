@@ -1,5 +1,6 @@
 package com.example.cupcake;
 
+import com.example.cupcake.Entities.Base;
 import com.example.cupcake.Entities.Order;
 import com.example.cupcake.Entities.Toppings;
 
@@ -15,18 +16,34 @@ public class ServletCheckout extends HttpServlet {
     {
 
         //Toppings cakeTop = new Toppings(request.getParameter("selectTopping"),request.getParameter("selectBase"),(request.getAttribute("selectTopping").+(request.getAttribute())));
+        HttpSession session = request.getSession();
 
         String chosenTopping1 = request.getParameter("selectTopping");
 
         String chosenBase1 = request.getParameter("selectBase");
 
+        session.setAttribute("selectedTopping", chosenTopping1);
+
+        session.setAttribute("selectedTopping", chosenTopping1);
+        session.setAttribute("selectedBase", chosenBase1);
+
+        Toppings top1 = (Toppings) getServletContext().getAttribute("selectTopping");
+
+        Base base1 = (Base) request.getSession().getServletContext().getAttribute("selectBase");
+
+        int topPrice = top1.getPrice();
+        int basePrice = base1.getPrice();
+
+        int totalPrice = topPrice+basePrice;
+
+        Order order = new Order(chosenTopping1,chosenBase1,totalPrice);
 
 
 
-        HttpSession session = request.getSession();
 
-        session.setAttribute("selectTopping", chosenTopping1);
-        session.setAttribute("selectBase", chosenBase1);
+        session.setAttribute("order", order);
+
+
 
         request.getRequestDispatcher("WEB-INF/Checkout.jsp").forward(request,response);
 
@@ -37,7 +54,6 @@ public class ServletCheckout extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 
 
 

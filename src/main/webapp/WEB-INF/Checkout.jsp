@@ -8,16 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>DIN KURV</title>
+    <title>check out</title>
 </head>
 <body>
 
-<h1> Her er din kurv ${sessionScope.name} </h1>
-<h3>${sessionScope.selectTopping}</h3>
-<h3>${sessionScope.selectBase}</h3>
+    <h1> Her er din kurv ${sessionScope.name} </h1>
+    <br>
+    <h3> du har valgt ${sessionScope.selectedTopping} som din topping</h3>
+    <h3> og ${sessionScope.selectedBase} som din base</h3>
 
-
-
+    <p>${sessionScope.order}</p>
 
 </body>
 </html>

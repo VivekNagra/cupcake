@@ -17,7 +17,7 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public Order(String topping, String base, int price)
+    public Order(Toppings topping, Base base, int price)
     {
         this.topping = topping;
         this.base = base;
