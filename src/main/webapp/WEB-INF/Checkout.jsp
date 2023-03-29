@@ -14,9 +14,14 @@
 
 <h1> Her er din kurv ${sessionScope.name} </h1>
 
+<h2> Your Cuppcake is:</h2>
+
 <h4>Base: ${sessionScope.baseName}  Price: ${sessionScope.basePrice} KR.</h4>
 
 <h4>Topping: ${sessionScope.toppingName}  Price: ${sessionScope.toppingPrice} KR.</h4>
+
+<h2> Amount: ${sessionScope.quantity}</h2>
+
 
 <h2> Your total is: ${sessionScope.total} KR.</h2>
 

@@ -108,12 +108,29 @@
             </c:forEach>
         </select>
         <br>
+
         <h3>Vælg en cupcake bund</h3>
         <select name="selectBase" class="form-select" aria-label="Default select example">
             <option selected>Vælg bunden </option>
             <c:forEach var="base" items="${applicationScope.baseList}" >
                 <option value="${base.name},${base.price}">${base.name}&nbsp - &nbsp ${base.price}&nbsp kr. </option>
             </c:forEach>
+
+        </select>
+
+        <h3>Vælg et antal</h3>
+        <select name="quantity" class="form-select" aria-label="Default select example">
+            <option selected>Vælg antal </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
 
 
         </select>

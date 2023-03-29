@@ -27,6 +27,15 @@ public class Order {
         this.quantity = quantity;
     }
 
+    public Order(String base, String topping, int price, int quantity)
+    {
+        this.base = base;
+        this.topping = topping;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+
     public int getIdOrder() {
         return idOrder;
     }

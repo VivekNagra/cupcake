@@ -1,14 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: city
-  Date: 28/03/2023
-  Time: 16.43
-  To change this template use File | Settings | File Templates.
---%>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Secure Paymanet</title>
+
+<style>
+    table, th, td
+    {
+        border:2px solid black;
+    }
+
+</style>
+
+<title>Secure Paymanet</title>
 </head>
 <body>
 
@@ -69,9 +72,21 @@
         <div class="container">
             <h1>Cart</h1>
 
-            <h3>Cupcake : ${sessionScope.toppingName} Topping ${sessionScope.toppingPrice} kr.   With ${sessionScope.baseName} Base ${sessionScope.basePrice} kr. </h3>
+            <table style="width:50%">
+                <tr>
+                    <th>Base</th>
+                    <th>Topping</th>
+                    <th>Quanity</th>
+                </tr>
+                   <tr>
+                     <td>${sessionScope.baseName}</td>
+                     <td>${sessionScope.toppingName}</td>
+                     <td>${sessionScope.quantity}</td>
+                   </tr>
 
-            <h3>Price to pay: ${sessionScope.total} KR. </h3>
+                <h3> TOTAL AMOUNT: ${sessionScope.total} KR.</h3>
+
+
 
 
 
