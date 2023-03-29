@@ -14,34 +14,36 @@ public class ServletCheckout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-
-        //Toppings cakeTop = new Toppings(request.getParameter("selectTopping"),request.getParameter("selectBase"),(request.getAttribute("selectTopping").+(request.getAttribute())));
-        HttpSession session = request.getSession();
-
         String chosenTopping1 = request.getParameter("selectTopping");
 
         String chosenBase1 = request.getParameter("selectBase");
 
-        session.setAttribute("selectedTopping", chosenTopping1);
 
-        session.setAttribute("selectedTopping", chosenTopping1);
-        session.setAttribute("selectedBase", chosenBase1);
+        String[] selectedToppingValues = chosenTopping1.split(",");
+        String selectedToppingName = selectedToppingValues[0];
+       // String selectedToppingPrice = selectedToppingValues[1];
+        int selectedToppingPrice = Integer.parseInt(selectedToppingValues[1]);
 
-        Toppings top1 = (Toppings) getServletContext().getAttribute("selectTopping");
 
-        Base base1 = (Base) request.getSession().getServletContext().getAttribute("selectBase");
+        String[] selectedBaseValues = chosenBase1.split(",");
+        String selectedBaseName = selectedBaseValues[0];
+        //String selectedBasePrice = selectedBaseValues[1];
+        int selectedBasePrice = Integer.parseInt(selectedBaseValues[1]);
 
-        int topPrice = top1.getPrice();
-        int basePrice = base1.getPrice();
-
-        int totalPrice = topPrice+basePrice;
-
-        Order order = new Order(chosenTopping1,chosenBase1,totalPrice);
+        int total = selectedToppingPrice + selectedBasePrice;
 
 
 
+        HttpSession session = request.getSession();
 
-        session.setAttribute("order", order);
+        session.setAttribute("baseName", selectedBaseName);
+        session.setAttribute("basePrice", selectedBasePrice);
+
+        session.setAttribute("toppingName", selectedToppingName);
+        session.setAttribute("toppingPrice", selectedToppingPrice);
+
+        session.setAttribute("total", total);
+
 
 
 
@@ -53,7 +55,9 @@ public class ServletCheckout extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+
 
 
 

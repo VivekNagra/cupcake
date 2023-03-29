@@ -10,7 +10,7 @@
     <h1>Make your own cupcake!</h1>
 
     <br>
-    <h3>choose a cupcake topping</h3>
+
     <%--<form action="ServletCheckout" method="get">
         <select name="selectTopping" class="form-select" aria-label="Default select example">
             <option selected>Choose a topping </option>
@@ -21,27 +21,34 @@
         <input type="submit" value="add topping">
     </form>--%>
 
-    //prøver med begge
+    <h3>Choose a cupcake Topping</h3>
+    <br>
     <form action="ServletCheckout" method="get">
         <select name="selectTopping" class="form-select" aria-label="Default select example">
             <option selected>Choose a topping </option>
             <c:forEach var="topping" items="${applicationScope.toppingList}" >
-                <option value="${topping}">${topping.name}&nbsp - &nbsp${topping.price}&nbsp kr. </option>
+                <option value="${topping.name},${topping.price}">${topping.name}&nbsp - &nbsp ${topping.price} &nbsp kr. </option>
             </c:forEach>
         </select>
-
+        <br>
+        <h3>Choose a cupcake Base</h3>
         <select name="selectBase" class="form-select" aria-label="Default select example">
             <option selected>Choose a base </option>
             <c:forEach var="base" items="${applicationScope.baseList}" >
-                <option value="${base}">${base.name}&nbsp - &nbsp${base.price}&nbsp kr. </option>
+                <option value="${base.name},${base.price}">${base.name}&nbsp - &nbsp ${base.price}&nbsp kr. </option>
             </c:forEach>
+
+
         </select>
 
-        <input type="submit" value="add to Cupcake">
+        <input type="submit" value="Add to cart">
+
+
     </form>
 
     <br>
-    //new try
+
+  <%--  //new try
     <h3>Choose a cupcake base</h3>
     <form action="ServletCheckout" method="get">
         <select name="item">
@@ -51,7 +58,7 @@
         </select>
         <input type="submit" value="Submit">
     </form>
-    //try 2
+    //try 2--%>
 
     <%--<h3>Choose a cupcake base</h3>
     <form action="ServletCheckout" method="get">
@@ -63,10 +70,10 @@
         </select>
     </form>--%>
 
-    <form action="ServletCheckout">
+   <%-- <form action="ServletCheckout">
         <input type="submit" value="Order Cupcake">
     </form>
-
+--%>
 
 
 
