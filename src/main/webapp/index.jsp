@@ -96,11 +96,11 @@
                         <div class="modal-body">
 
                             <form action="hello-servlet" method="post">
-                                <label for="nyNavn">Angiv navn:</label><br>
-                                <input type="text" id="nyNavn" name="nyNavn" value="Enter name"><br>
-                                <label for="nyKode">angiv ny kode:</label><br>
-                                <input type="text" id="nyKode" name="nyKode" value="enter password"><br><br>
-                                <input type="submit" value="opret bruger">
+                                <label for="nyNavn">Brugernavn:</label><br>
+                                <input type="text" id="nyNavn" name="nyNavn" placeholder="Indtast brugernavn"><br>
+                                <label for="nyKode">Kodeord:</label><br>
+                                <input type="text" id="nyKode" name="nyKode" placeholder="Indtast kodeord"><br><br>
+                                <input type="submit" class="btn btn-success" value="opret bruger">
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -122,11 +122,11 @@
                         <div class="modal-body">
 
                             <form action="hello-servlet" method="get">
-                                <label for="navn">Angiv navn:</label><br>
-                                <input type="text" id="navn" name="navn" value="metin"><br>
-                                <label for="kode">angiv kode:</label><br>
-                                <input type="text" id="kode" name="kode" value="123"><br><br>
-                                <input type="submit" value="Submit">
+                                <label for="navn">Brugernavn:</label><br>
+                                <input type="text" id="navn" name="navn" placeholder="Indtast brugernavn"><br>
+                                <label for="kode">Kodeord:</label><br>
+                                <input type="text" id="kode" name="kode" placeholder="Indtast kodeord"><br><br>
+                                <input type="submit" class="btn btn-success" value="Login">
                             </form>
                         </div>
                         <div class="modal-footer">

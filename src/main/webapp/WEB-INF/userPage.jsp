@@ -57,12 +57,17 @@
             </a>
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-house"></i> Forside</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ServletCake"><i class="fa-solid fa-paintbrush"></i> Design din cupcake</a>
-                </li>
+                <form action="ServletOversigt" method="get">
+                    <input type="submit" value="Adminpanel">
+                </form>
+                &nbsp
+                <form action="ServletCake">
+                    <input type="submit" value="Bestil Cupcakes">
+                </form>
+                &nbsp
+                <form action="ServletLogOut">
+                    <input type="submit" value="Log af">
+                </form>
             </ul>
 
             <!-- Left links -->
@@ -71,7 +76,7 @@
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
-            <h5>Welcome to your page, ${sessionScope.name}</h5>
+            <h5>Velkommen, ${sessionScope.name}</h5>
             <a class="text-reset me-3" href="#">
                 <i style="padding-left: 10px" class="fa-solid fa-cart-shopping"></i>
             </a>
@@ -79,7 +84,6 @@
 
     </div>
 </nav>
-<h2></h2>
 
 <br>
 
@@ -87,29 +91,11 @@
 <div style="align-content: center" class="card" style="width: 80rem;">
     <img src="Gallery/olskerlogo.png" class="card-img-top" alt="logo-olsker">
     <div class="card-body">
-
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<h3>Nyhedsfeed</h3>
+        <p class="card-text">Her kan vi vise nyhederne på siden.</p>
     </div>
 </div>
 
-
-<form action="ServletLogOut">
-    <input type="submit" value="Log af">
-</form>
-
-<br>
-
-<form action="ServletOversigt" method="get">
-    <input type="submit" value="admin">
-</form>
-
-<br>
-
-<form action="ServletCake">
-    <input type="submit" value="Order Cupcake">
-</form>
-
-<br>
 
 </body>
 </html>
