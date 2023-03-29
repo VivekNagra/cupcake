@@ -118,6 +118,8 @@
 
         </select>
 
+        <br>
+
         <h3>Vælg et antal</h3>
         <select name="quantity" class="form-select" aria-label="Default select example">
             <option selected>Vælg antal </option>
@@ -141,32 +143,6 @@
     </form>
 </div>
 
-  <%--  //new try
-    <h3>Choose a cupcake base</h3>
-    <form action="ServletCheckout" method="get">
-        <select name="item">
-            <option value="1">Cream</option>
-            <option value="2">Choko</option>
-            <option value="3">Curry</option>
-        </select>
-        <input type="submit" value="Submit">
-    </form>
-    //try 2--%>
-
-    <%--<h3>Choose a cupcake base</h3>
-    <form action="ServletCheckout" method="get">
-        <select class="form-select" aria-label="Default select example" id="selectBase" name="selectBase" >
-            <option selected>Choose a base </option>
-            <c:forEach var="base" items="${applicationScope.baseList}" >
-                <option value="${base}">${base.name}&nbsp - &nbsp${base.price}&nbsp kr. </option>
-            </c:forEach>
-        </select>
-    </form>--%>
-
-   <%-- <form action="ServletCheckout">
-        <input type="submit" value="Order Cupcake">
-    </form>
---%>
 
 
 
