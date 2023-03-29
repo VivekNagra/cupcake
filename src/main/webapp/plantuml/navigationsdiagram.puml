@@ -3,16 +3,16 @@
 Title Olsker Cupcakes
 
 state index.jsp
-state login.jsp
-state createuser.jsp
+state CreateUser.jsp
 state userPage.jsp
+state LogPå
 
 [*] --> index.jsp
-index.jsp --> login.jsp: log på
-login.jsp --> createuser.jsp: opret bruger (ServletCreateUser)
-createuser.jsp --> login.jsp: retur
-login.jsp --> login.jsp: Log på [fejl]
-login.jsp --> userPage.jsp: Log på [ok] (HelloServlet)
+index.jsp --> LogPå: Log på
+LogPå --> index.jsp: Log på [fejl]
+LogPå --> userPage.jsp: Log på [ok] (HelloServlet)
+index.jsp --> CreateUser.jsp: Opret bruger (ServletCreateUser)
+CreateUser.jsp --> userPage.jsp: Opret bruger [ok] (HelloServlet)
 userPage.jsp --> LoggedOn
 
 state LoggedOn {
