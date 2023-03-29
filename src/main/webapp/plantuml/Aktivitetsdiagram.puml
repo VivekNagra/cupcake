@@ -1,0 +1,28 @@
+ @startuml
+ |Customer|
+ start
+ :            C1
+ Putter varer i kurv;
+
+ :       C2
+ Tjekker ud;
+
+ :          C3
+ Betaler ordren;
+
+ |#AntiqueWhite|Webshop|
+ :W1
+ Ordrer gemmes;
+
+ |Olsker Cupcakes|
+ :O1
+ Ordre;
+ :O2
+ Lav cupcake;
+ :O3
+ Cupcake;
+ |Customer|
+ :C4
+ Afhent cupcake;
+ stop
+ @enduml

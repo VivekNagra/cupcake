@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+Title Use Case Diagram
+actor Customer
+actor Admin
+rectangle webshop {
+Customer --(Login)
+Customer --(Læg varer i kurv)
+Customer --(Køb varer)
+Admin --(Login)
+Admin --(Læg varer i kurv)
+Admin --(Køb varer)
+Admin --(Se ordrer)
+}
+@enduml

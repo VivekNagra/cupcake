@@ -1,0 +1,36 @@
+@startuml
+
+Title Olsker Cupcakes
+
+state index.jsp
+state login.jsp
+state createuser.jsp
+state userPage.jsp
+
+[*] --> index.jsp
+index.jsp --> login.jsp: log på
+login.jsp --> createuser.jsp: opret bruger (ServletCreateUser)
+createuser.jsp --> login.jsp: retur
+login.jsp --> login.jsp: Log på [fejl]
+login.jsp --> userPage.jsp: Log på [ok] (HelloServlet)
+userPage.jsp --> LoggedOn
+
+state LoggedOn {
+    state adminPage.jsp
+    state CurrentOrders.jsp
+    state CupcakeMaker.jsp
+    state Checkout.jsp
+    state Payment.jsp
+
+    [*] --> adminPage.jsp
+    adminPage.jsp --> CurrentOrders.jsp: se ordrer (ServletOversigt)
+    [*] --> CupcakeMaker.jsp: lav cupcakes (ServletCake)
+    CupcakeMaker.jsp --> Checkout.jsp: læg cupcakes i kurven (ServletCheckout)
+    Checkout.jsp --> Payment.jsp: betal for cupcakes (ServletPay)
+
+
+
+}
+
+
+@enduml
