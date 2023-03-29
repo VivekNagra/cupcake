@@ -64,7 +64,6 @@ public class HelloServlet extends HttpServlet {
             System.out.println("rs " + resultSet);
 
             //create user instance
-            //User user = new User(resultSet.getInt("idCustomer"),resultSet.getString("Name"),resultSet.getString("Password"));
 
 
                 //resultSet.next();
@@ -73,6 +72,9 @@ public class HelloServlet extends HttpServlet {
                 {
                     System.out.println("successful login as " + resultSet.getString("name"));
                     //return resultSet.getString("userName");
+                    User user = new User(resultSet.getInt("idCustomer"),name, password);
+                    session.setAttribute("currentUser", user);
+                    System.out.println("dit id er "+ user.getId());
                     request.getRequestDispatcher("WEB-INF/userPage.jsp").forward(request,response);
                 } else {
                     System.out.println("User does not exist - Please try again");

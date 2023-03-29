@@ -19,6 +19,7 @@ public class Order {
 
     public Order(String base, String topping, int price, int cartID, int quantity)
     {
+        this.topping = topping;
         this.base = base;
         this.topping = topping;
         this.price = price;

@@ -29,12 +29,8 @@ public class ServletCake extends HttpServlet {
 
         //Map<String, Order> toppingMap = new HashMap<>();
 
-
-
         getServletContext().setAttribute("toppingList", toppingList);
         getServletContext().setAttribute("baseList", baseList);
-
-
 
 
         //setup of all topping options

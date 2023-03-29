@@ -1,5 +1,6 @@
 package com.example.cupcake;
 
+import com.example.cupcake.Entities.Base;
 import com.example.cupcake.Entities.Order;
 import com.example.cupcake.Entities.Toppings;
 
@@ -47,8 +48,6 @@ public class ServletCheckout extends HttpServlet {
 
 
         request.getRequestDispatcher("WEB-INF/Checkout.jsp").forward(request,response);
-
-
 
 
 
